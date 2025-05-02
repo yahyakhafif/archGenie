@@ -3,14 +3,7 @@ import { Link } from 'react-router-dom';
 import { styleAPI, userAPI } from '../api/api';
 import { useAuth } from '../hooks/useAuth';
 
-const Home = () => {
-    const [featuredStyles, setFeaturedStyles] = useState([]);
-    const [recommendedStyles, setRecommendedStyles] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const { isAuthenticated, user } = useAuth();
-
-    const staticFeaturedStyles = [
+const staticFeaturedStyles = [
         {
             _id: 'static1',
             name: 'Gothic',
@@ -36,6 +29,13 @@ const Home = () => {
             isStatic: true
         }
     ];
+
+const Home = () => {
+    const [featuredStyles, setFeaturedStyles] = useState([]);
+    const [recommendedStyles, setRecommendedStyles] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const { isAuthenticated } = useAuth();
 
     const fetchRecommendations = useCallback(async () => {
         if (!isAuthenticated) return;

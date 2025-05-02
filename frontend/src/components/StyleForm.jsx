@@ -47,7 +47,7 @@ const StyleForm = () => {
                     description: d.description || '',
                     characteristics: d.characteristics.length ? d.characteristics : [''],
                     mainFeatures: d.mainFeatures?.length ? d.mainFeatures : [''],
-                    famousExamples: d.famousExamples?.length ? d.famousExamples : formData.famousExamples,
+                    famousExamples: d.famousExamples?.length ? d.famousExamples : [{ name: '', location: '', architect: '', year: '', imageUrl: '' }],
                     imageUrl: d.imageUrl || ''
                 });
             })
